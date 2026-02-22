@@ -1,0 +1,208 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "47b9953a66140d495cc5",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 280.1215805471125,
+    "width": 664.31610942249245,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bmw_global_sales_dataset"
+                        }
+                      },
+                      "Property": "competition_index"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(bmw_global_sales_dataset.competition_index)",
+              "nativeQueryRef": "Sum of competition_index"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "bmw_global_sales_dataset"
+                    }
+                  },
+                  "Property": "engine_type"
+                }
+              },
+              "queryRef": "bmw_global_sales_dataset.engine_type",
+              "nativeQueryRef": "engine_type"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bmw_global_sales_dataset"
+                        }
+                      },
+                      "Property": "fuel_price_usd"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(bmw_global_sales_dataset.fuel_price_usd)",
+              "nativeQueryRef": "Sum of fuel_price_usd"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bmw_global_sales_dataset"
+                        }
+                      },
+                      "Property": "month"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(bmw_global_sales_dataset.month)",
+              "nativeQueryRef": "Sum of month"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bmw_global_sales_dataset"
+                        }
+                      },
+                      "Property": "price_usd"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(bmw_global_sales_dataset.price_usd)",
+              "nativeQueryRef": "Sum of price_usd"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "16d1edda93a660b95090",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bmw_global_sales_dataset"
+                  }
+                },
+                "Property": "competition_index"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b433f1ad6e7cd1596120",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "bmw_global_sales_dataset"
+              }
+            },
+            "Property": "engine_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ef6ed5294b9341e08c9c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bmw_global_sales_dataset"
+                  }
+                },
+                "Property": "fuel_price_usd"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "10dcf30e47e24d00b11a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bmw_global_sales_dataset"
+                  }
+                },
+                "Property": "month"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "695f2cca5c0b1173e253",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bmw_global_sales_dataset"
+                  }
+                },
+                "Property": "price_usd"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

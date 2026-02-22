@@ -1,0 +1,140 @@
+table bmw_global_sales_dataset
+	lineageTag: 142799f6-0e73-4ac1-bcde-e00bb8c377f9
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c239978-8f45-4bbe-8144-e1cbecd508dc
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		formatString: 0
+		lineageTag: 20b8f39b-623d-469c-a4e3-e07ff6b4ce27
+		summarizeBy: sum
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: dca373bb-ba4c-417e-a87a-8f634d785dd0
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column model
+		dataType: string
+		lineageTag: c49895b5-3fe7-4349-9b8b-78c4d8750692
+		summarizeBy: none
+		sourceColumn: model
+
+		annotation SummarizationSetBy = Automatic
+
+	column segment
+		dataType: string
+		lineageTag: a5ce096e-e8fd-4446-a9af-57e04ab579c5
+		summarizeBy: none
+		sourceColumn: segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column engine_type
+		dataType: string
+		lineageTag: 93349eaa-3014-436a-bbf5-68c4e1aa2dea
+		summarizeBy: none
+		sourceColumn: engine_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_usd
+		dataType: int64
+		formatString: 0
+		lineageTag: 09364198-be22-4390-84e8-4f2937bc3dce
+		summarizeBy: sum
+		sourceColumn: price_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column marketing_spend_usd
+		dataType: int64
+		formatString: 0
+		lineageTag: 1077ba7c-57e2-4570-86f9-f61fb108e964
+		summarizeBy: sum
+		sourceColumn: marketing_spend_usd
+
+		annotation SummarizationSetBy = Automatic
+
+	column dealership_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f9bdd57-9c44-421b-bcaf-8ef5efbb0f2e
+		summarizeBy: sum
+		sourceColumn: dealership_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_price_usd
+		dataType: double
+		lineageTag: cf6735c8-a02e-4ec9-877d-e2c2efb037a7
+		summarizeBy: sum
+		sourceColumn: fuel_price_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gdp_growth_percent
+		dataType: double
+		lineageTag: 42937cf7-e9b7-47c5-9317-aed3fb705f8a
+		summarizeBy: sum
+		sourceColumn: gdp_growth_percent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column interest_rate_percent
+		dataType: double
+		lineageTag: 0c81a9d6-4845-43ab-972d-3ffe83db6e24
+		summarizeBy: sum
+		sourceColumn: interest_rate_percent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column competition_index
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c5c0132-b5bf-4d1a-99a2-b4d2f572a837
+		summarizeBy: sum
+		sourceColumn: competition_index
+
+		annotation SummarizationSetBy = Automatic
+
+	column units_sold
+		dataType: int64
+		formatString: 0
+		lineageTag: 9587fc2b-0734-44d9-84e8-433be890e63d
+		summarizeBy: sum
+		sourceColumn: units_sold
+
+		annotation SummarizationSetBy = Automatic
+
+	partition bmw_global_sales_dataset = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\!JOB\PBITEST\bmw_global_sales_dataset.csv"),[Delimiter=",", Columns=14, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"year", Int64.Type}, {"month", Int64.Type}, {"country", type text}, {"model", type text}, {"segment", type text}, {"engine_type", type text}, {"price_usd", Int64.Type}, {"marketing_spend_usd", Int64.Type}, {"dealership_count", Int64.Type}, {"fuel_price_usd", type number}, {"gdp_growth_percent", type number}, {"interest_rate_percent", type number}, {"competition_index", Int64.Type}, {"units_sold", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

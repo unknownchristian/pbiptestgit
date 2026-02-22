@@ -1,0 +1,18 @@
+model Model
+	culture: en-PH
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-PH
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["bmw_global_sales_dataset"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table bmw_global_sales_dataset
+
+ref cultureInfo en-PH
+
