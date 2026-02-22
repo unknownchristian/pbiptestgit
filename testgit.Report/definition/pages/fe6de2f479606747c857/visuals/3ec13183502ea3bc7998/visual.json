@@ -1,0 +1,165 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "3ec13183502ea3bc7998",
+  "position": {
+    "x": 674.04255319148945,
+    "y": 0,
+    "z": 2,
+    "height": 214.95440729483283,
+    "width": 605.95744680851067,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "hundredPercentStackedColumnChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bmw_global_sales_dataset"
+                        }
+                      },
+                      "Property": "month"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(bmw_global_sales_dataset.month)",
+              "nativeQueryRef": "Sum of month"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bmw_global_sales_dataset"
+                        }
+                      },
+                      "Property": "fuel_price_usd"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(bmw_global_sales_dataset.fuel_price_usd)",
+              "nativeQueryRef": "Sum of fuel_price_usd"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "bmw_global_sales_dataset"
+                        }
+                      },
+                      "Property": "price_usd"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(bmw_global_sales_dataset.price_usd)",
+              "nativeQueryRef": "Sum of price_usd"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "bmw_global_sales_dataset"
+                      }
+                    },
+                    "Property": "month"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "757bfc71e27b7673a7e3",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bmw_global_sales_dataset"
+                  }
+                },
+                "Property": "month"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d6586ca2b1d3e2ab7500",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bmw_global_sales_dataset"
+                  }
+                },
+                "Property": "fuel_price_usd"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7125bf9070da3900604a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "bmw_global_sales_dataset"
+                  }
+                },
+                "Property": "price_usd"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

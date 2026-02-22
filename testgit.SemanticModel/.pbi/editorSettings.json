@@ -4,6 +4,13 @@
   "parallelQueryLoading": true,
   "typeDetectionEnabled": true,
   "relationshipImportEnabled": true,
+<<<<<<< Updated upstream
   "runBackgroundAnalysis": true,
+=======
+<<<<<<< Updated upstream
+  "runBackgroundAnalysis": true,
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   "shouldNotifyUserOfNameConflictResolution": true
 }
