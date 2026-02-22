@@ -1,24 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "1a5296f21d17dbe89d8a",
+  "name": "693501c761a56357569b",
   "position": {
-    "x": 0,
-    "y": 131.30699088145897,
-    "z": 1,
-    "height": 588.44984802431611,
-<<<<<<< Updated upstream
-    "width": 664.31610942249245,
-=======
-<<<<<<< Updated upstream
-    "width": 664.31610942249245,
-=======
-    "width": 599.14893617021278,
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-    "tabOrder": 1
+    "x": 664.31610942249245,
+    "y": 0,
+    "z": 2,
+    "height": 226.62613981762919,
+    "width": 605.95744680851067,
+    "tabOrder": 2
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
         "Category": {
@@ -31,11 +23,11 @@
                       "Entity": "bmw_global_sales_dataset"
                     }
                   },
-                  "Property": "year"
+                  "Property": "engine_type"
                 }
               },
-              "queryRef": "bmw_global_sales_dataset.year",
-              "nativeQueryRef": "year",
+              "queryRef": "bmw_global_sales_dataset.engine_type",
+              "nativeQueryRef": "engine_type",
               "active": true
             }
           ]
@@ -52,14 +44,14 @@
                           "Entity": "bmw_global_sales_dataset"
                         }
                       },
-                      "Property": "engine_type"
+                      "Property": "dealership_count"
                     }
                   },
-                  "Function": 5
+                  "Function": 0
                 }
               },
-              "queryRef": "CountNonNull(bmw_global_sales_dataset.engine_type)",
-              "nativeQueryRef": "engine_type"
+              "queryRef": "Sum(bmw_global_sales_dataset.dealership_count)",
+              "nativeQueryRef": "Sum of dealership_count"
             }
           ]
         }
@@ -76,10 +68,10 @@
                         "Entity": "bmw_global_sales_dataset"
                       }
                     },
-                    "Property": "engine_type"
+                    "Property": "dealership_count"
                   }
                 },
-                "Function": 5
+                "Function": 0
               }
             },
             "direction": "Descending"
@@ -93,7 +85,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "89792a0fc30313d8e805",
+        "name": "2966f12c26270b9b84b5",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -103,16 +95,16 @@
                     "Entity": "bmw_global_sales_dataset"
                   }
                 },
-                "Property": "engine_type"
+                "Property": "dealership_count"
               }
             },
-            "Function": 5
+            "Function": 0
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "0637e70b0e83ad49748e",
+        "name": "cedad81d08365a46538c",
         "field": {
           "Column": {
             "Expression": {
@@ -120,10 +112,10 @@
                 "Entity": "bmw_global_sales_dataset"
               }
             },
-            "Property": "year"
+            "Property": "engine_type"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical"
       }
     ]
   }
